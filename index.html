@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Festival "Río" | Colegio Tlahtoani</title>
+    <!-- Librería AOS para animaciones -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.css">
+    <!-- Fuentes Google -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --azul-rio: #00A8E8;
+            --amarillo-tropical: #FFD700;
+            --verde-jungla: #2ECC71;
+            --naranja-fuego: #FF7F50;
+            --morado-fiesta: #9B59B6;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            color: #333;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        .hero {
+            background: linear-gradient(to right, var(--azul-rio), var(--verde-jungla));
+            color: white;
+            padding: 2rem 1rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        
+        .hero-image {
+            width: 100%;
+            max-width: 600px;
+            max-height: 400px;
+            object-fit: contain;
+            border-radius: 10px;
+            margin: 1rem auto;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+            border: 4px solid var(--amarillo-tropical);
+            display: block;
+        }
+        
+        .logo {
+            width: 180px;
+            margin-bottom: 1rem;
+            filter: drop-shadow(0 4px 8px rgba(0,0,0,0.2));
+        }
+        
+        h1, h2, h3 {
+            font-family: 'Montserrat', sans-serif;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            color: white;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto 1rem;
+        }
+        
+        /* Secciones */
+        .section {
+            padding: 3rem 1.5rem;
+            margin: 2rem auto;
+            max-width: 1000px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        h2 {
+            font-size: 2rem;
+            color: var(--azul-rio);
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+        
+        /* Estilos para la sección de acceso */
+        .access-steps {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .step {
+            flex: 1;
+            min-width: 250px;
+            max-width: 300px;
+            background: linear-gradient(135deg, #ffffff 0%, #f3f4f6 100%);
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: transform 0.3s;
+            border-top: 5px solid var(--azul-rio);
+        }
+        
+        .step:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+        }
+        
+        .step-number {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background: var(--azul-rio);
+            color: white;
+            border-radius: 50%;
+            font-weight: bold;
+            line-height: 40px;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+        
+        /* Mapa de ubicación */
+        .map-container {
+            margin: 2rem auto;
+            text-align: center;
+        }
+        
+        .map {
+            width: 100%;
+            height: 400px;
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            border: 3px solid var(--azul-rio);
+        }
+        
+        /* Contador regresivo */
+        .countdown-container {
+            background: linear-gradient(to right, var(--azul-rio), var(--morado-fiesta));
+            color: white;
+            padding: 3rem 1rem;
+            text-align: center;
+            margin-top: 2rem;
+        }
+        
+        .countdown-title {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .countdown {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin: 0 auto;
+            max-width: 800px;
+            text-align: center;
+        }
+        
+        .countdown-item {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 1.5rem 1rem;
+            border-radius: 10px;
+            min-width: 90px;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255,255,255,0.3);
+        }
+        
+        .countdown-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        .countdown-label {
+            font-size: 1rem;
+            opacity: 0.9;
+            letter-spacing: 1px;
+        }
+        
+        @media (max-width: 600px) {
+            .countdown {
+                flex-wrap: wrap;
+                gap: 1rem;
+            }
+            
+            .hero-image {
+                max-height: 250px;
+            }
+            
+            .map {
+                height: 300px;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            h2 {
+                font-size: 1.5rem;
+            }
+            
+            .countdown-item {
+                min-width: 70px;
+                padding: 1rem 0.5rem;
+            }
+            
+            .countdown-number {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="hero" data-aos="fade-down">
+        <img src="logo_tlahtoani.png" alt="Logo Colegio Tlahtoani" class="logo">
+        <h1>¡Festival "Río" 2024!</h1>
+        <p>Una aventura tropical inspirada en la película de Blue Sky Studios</p>
+        
+        <!-- Imagen local (cambiada de enlace externo a archivo local) -->
+        <img src="rio_festival_portada.jpg" 
+             alt="Festival Río - Colegio Tlahtoani" 
+             class="hero-image"
+             data-aos="zoom-in">
+    </header>
+
+    <!-- Sección de Acceso al Festival -->
+    <section class="section" id="access" data-aos="fade-up">
+        <h2>Acceso al Festival</h2>
+        <div class="access-steps">
+            <div class="step" data-aos="fade-up" data-aos-delay="200">
+                <div class="step-number">1</div>
+                <h3>Recibe tus boletos</h3>
+                <p>Serán entregados en el colegio. Boletos extra: $120.</p>
+            </div>
+            <div class="step" data-aos="fade-up" data-aos-delay="400">
+                <div class="step-number">2</div>
+                <h3>Guarda tus boletos</h3>
+                <p>Consérvalos y llévalos al evento.</p>
+            </div>
+            <div class="step" data-aos="fade-up" data-aos-delay="600">
+                <div class="step-number">3</div>
+                <h3>Preséntalos en la entrada</h3>
+                <p>Muestra tus boletos válidos para ingresar.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Detalles del Evento -->
+    <section class="section" id="details" data-aos="fade-up">
+        <h2>Detalles del Evento</h2>
+        <div class="info-card">
+            <p><strong>Fecha:</strong> 18 de julio, 2024</p>
+            <p><strong>Horarios:</strong></p>
+            <ul style="margin-top: 5px; padding-left: 20px;">
+                <li>Acto académico 6to grado: 1:30 PM</li>
+                <li>Acto académico 3ro kínder: 2:45 PM</li>
+                <li>Festival kínder: 4:30 PM</li>
+                <li>Festival primaria: 6:00 PM</li>
+            </ul>
+            <p><strong>Lugar:</strong> Centro de Desarrollo Comunitario #25, DIF Guadalajara, Avenida Patria, El Sauz, Guadalajara, Jalisco, México</p>
+            
+            <!-- Mapa interactivo -->
+            <div class="map-container">
+                <iframe class="map" 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3732.715061767188!2d-103.3848689242246!3d20.67378198087636!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8428ae3a95d7589d%3A0x528de490c092c4f1!2sCentro%20de%20Desarrollo%20Comunitario%20%2325%20DIF%20Guadalajara!5e0!3m2!1ses-419!2smx!4v1718331230848!5m2!1ses-419!2smx" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+                <a href="https://maps.app.goo.gl/Q6nx3twiyeCMZEDT9" 
+                   target="_blank" 
+                   style="color: var(--azul-rio); text-decoration: none; font-weight: bold; display: inline-block; margin-top: 15px; padding: 8px 20px; background: var(--amarillo-tropical); border-radius: 30px; transition: all 0.3s;">
+                    📍 Abrir en Google Maps
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cuenta regresiva -->
+    <div class="countdown-container">
+        <h3 class="countdown-title">Faltan para el gran festival:</h3>
+        <div class="countdown">
+            <div class="countdown-item">
+                <div class="countdown-number" id="days">00</div>
+                <div class="countdown-label">Días</div>
+            </div>
+            <div class="countdown-item">
+                <div class="countdown-number" id="hours">00</div>
+                <div class="countdown-label">Horas</div>
+            </div>
+            <div class="countdown-item">
+                <div class="countdown-number" id="minutes">00</div>
+                <div class="countdown-label">Minutos</div>
+            </div>
+            <div class="countdown-item">
+                <div class="countdown-number" id="seconds">00</div>
+                <div class="countdown-label">Segundos</div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Inicializar AOS
+        AOS.init({
+            once: true,
+            duration: 800,
+            easing: 'ease-out-back'
+        });
+        
+        // Contador regresivo mejorado con zona horaria
+        function updateCountdown() {
+            // Configurar fecha del evento (18 julio 2024, 1:30 PM, hora de Guadalajara)
+            const eventDate = new Date('2024-07-18T13:30:00-06:00');
+            const now = new Date();
+            
+            // Ajustar a la zona horaria local del usuario
+            const timeZoneOffset = now.getTimezoneOffset() * 60000;
+            const localNow = new Date(now.getTime() - timeZoneOffset);
+            const distance = eventDate - localNow;
+            
+            if (distance <= 0) {
+                clearInterval(countdownTimer);
+                document.querySelector(".countdown-container").innerHTML = `
+                    <h3>¡El festival está en marcha!</h3>
+                    <p style="font-size: 1.2rem;">¡Ven y únete a la diversión!</p>
+                    <img src="rio_festival_portada.jpg" 
+                         style="width: 100%; max-width: 300px; border-radius: 10px; margin-top: 1rem; border: 4px solid white;">
+                `;
+                return;
+            }
+            
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            
+            document.getElementById("days").textContent = days.toString().padStart(2, "0");
+            document.getElementById("hours").textContent = hours.toString().padStart(2, "0");
+            document.getElementById("minutes").textContent = minutes.toString().padStart(2, "0");
+            document.getElementById("seconds").textContent = seconds.toString().padStart(2, "0");
+        }
+        
+        // Actualizar inmediatamente y luego cada segundo
+        updateCountdown();
+        const countdownTimer = setInterval(updateCountdown, 1000);
+    </script>
+</body>
+</html>
