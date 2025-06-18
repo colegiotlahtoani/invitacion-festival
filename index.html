@@ -5,110 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Festival "Río" | Colegio Tlahtoani</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.css">
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --verde-limon: #C6FF00;  /* Verde limón vibrante */
-            --verde-jungla: #2E8B57;  /* Verde selva para contraste */
-            --amarillo: #FFD700;       /* Amarillo dorado */
-            --blanco: #FFFFFF;
-            --oscuro: #1A3E1A;         /* Verde oscuro para sombras */
-        }
-        
-        body {
-            margin: 0;
-            font-family: 'Poppins', sans-serif;
-            overflow-x: hidden;
-            background-color: #f5f5f5;
-        }
-        
-        /* Fondo con textura de hojas */
-        .hero {
-            background: 
-                linear-gradient(to bottom, rgba(46, 139, 87, 0.85), rgba(198, 255, 0, 0.7)),
-                url('https://images.unsplash.com/photo-1498496294664-d9372eb521f3?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') center/cover;
-            padding: 5rem 1.5rem;
-            text-align: center;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-        }
-        
-        /* Logo con detalle tropical */
-        .logo-text {
-            font-family: 'Nunito', sans-serif;
-            font-size: 2rem;
-            font-weight: 800;
-            color: var(--blanco);
-            margin-bottom: 0.5rem;
-            letter-spacing: 1px;
-            text-shadow: 2px 2px 4px var(--oscuro);
-            position: relative;
-            display: inline-block;
-        }
-        
-        /* Título principal con énfasis en verde limón */
-        .festival-title {
-            font-family: 'Nunito', sans-serif;
-            font-size: 3.5rem;
-            font-weight: 900;
-            color: var(--blanco);
-            margin: 1rem 0;
-            line-height: 1.1;
-            text-shadow: 3px 3px 6px var(--oscuro);
-        }
-        
-        .festival-title span {
-            color: var(--verde-limon);
-            position: relative;
-            display: inline-block;
-        }
-        
-        .festival-title span::after {
-            content: '';
-            position: absolute;
-            bottom: 5px;
-            left: 0;
-            width: 100%;
-            height: 3px;
-            background: var(--amarillo);
-            border-radius: 3px;
-        }
-        
-        /* Responsive */
-        @media (max-width: 768px) {
-            .festival-title {
-                font-size: 2.5rem;
-            }
-            
-            .logo-text {
-                font-size: 1.8rem;
-            }
-        }
-    </style>
-</head>
-<body>
-    <header class="hero" data-aos="fade-down">
-        <div class="logo-text" data-aos="fade">Colegio Tlahtoani</div>
-        <h1 class="festival-title" data-aos="fade-up" data-aos-delay="200">
-            ¡Festival <span>"Río"</span> 2024!
-        </h1>
-    </header>
-
-    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.js"></script>
-    <script>
-        AOS.init({
-            once: true,
-            duration: 800,
-            easing: 'ease-out-back'
-        });
-    </script>
-</body>
-</html><!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Festival "Río" | Colegio Tlahtoani</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.css">
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
@@ -122,6 +18,7 @@
             --rojo-pasion: #FF4757;
             --fondo: #F8F9FA;
             --texto: #2D3436;
+            --verde-limon: #E0FF00;
         }
         
         * {
@@ -139,55 +36,49 @@
             font-size: 16px;
         }
         
-        /* Header */
-        .hero {
-            background: linear-gradient(135deg, var(--azul-rio), var(--verde));
-            color: white;
-            padding: 2rem 1.5rem;
+        /* PORTADA */
+        .portada {
+            background-color: var(--verde-limon);
+            padding: 3rem 1.5rem;
             text-align: center;
+            margin-bottom: 2rem;
             position: relative;
             overflow: hidden;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
         }
         
-        .logo {
-            width: 150px;
-            margin-bottom: 1rem;
-            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
-        }
-        
-        h1 {
+        .titulo-principal {
             font-family: 'Nunito', sans-serif;
-            font-size: 2.2rem;
-            margin-bottom: 0.5rem;
-            color: white;
+            font-size: 2.5rem;
             font-weight: 800;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            margin-bottom: 1rem;
+            color: var(--azul-rio);
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+            position: relative;
+            z-index: 2;
         }
         
-        .hero p {
-            font-size: 1.1rem;
-            max-width: 100%;
-            margin: 0 auto 1.5rem;
-            font-weight: 500;
-        }
-        
-        .hero-image {
-            width: 100%;
-            max-width: 100%;
-            border-radius: 12px;
-            margin: 1rem auto;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-            border: 4px solid var(--amarillo);
+        .titulo-principal span {
             display: block;
-            transition: transform 0.3s;
+            font-size: 1.8rem;
+            color: white;
+            background-color: var(--azul-rio);
+            padding: 0.5rem 1rem;
+            border-radius: 30px;
+            margin-top: 1rem;
+            box-shadow: 0 4px 12px rgba(0,150,255,0.3);
         }
         
-        .hero-image:hover {
-            transform: scale(1.02);
+        .olas-decoracion {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 20px;
+            background: url('data:image/svg+xml;utf8,<svg viewBox="0 0 1200 120" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" fill="%230096FF" opacity=".25"/><path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" fill="%230096FF" opacity=".5"/><path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" fill="%230096FF"/></svg>');
+            background-size: cover;
         }
-        
-        /* Secciones */
+
+        /* Resto del CSS existente... */
         .section {
             padding: 2rem 1.5rem;
             margin: 1.5rem auto;
@@ -342,6 +233,31 @@
         .instagram {
             background: linear-gradient(45deg, #405DE6, #E1306C, #FFDC80);
         }
+
+        /* Botón de Inicio */
+        .home-btn {
+            position: fixed;
+            bottom: 2rem;
+            left: 2rem;
+            width: 50px;
+            height: 50px;
+            background: var(--azul-rio);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            transition: all 0.3s;
+            z-index: 100;
+            text-decoration: none;
+        }
+        
+        .home-btn:hover {
+            transform: translateY(-5px) scale(1.1);
+            background: var(--verde);
+        }
         
         /* Responsive */
         @media (min-width: 768px) {
@@ -349,16 +265,19 @@
                 font-size: 17px;
             }
             
-            .hero {
-                padding: 3rem 2rem;
+            .portada {
+                padding: 5rem 1.5rem;
             }
             
-            h1 {
-                font-size: 2.8rem;
+            .titulo-principal {
+                font-size: 4rem;
             }
             
-            .hero p {
-                font-size: 1.2rem;
+            .titulo-principal span {
+                font-size: 2.2rem;
+                display: inline-block;
+                margin-left: 1rem;
+                margin-right: 1rem;
             }
             
             .section {
@@ -383,16 +302,11 @@
     </style>
 </head>
 <body>
-    <header class="hero" data-aos="fade-down">
-        <img src="logo_tlahtoani.png" alt="Logo Colegio Tlahtoani" class="logo">
-        <h1>¡Festival "Río" 2024!</h1>
-        <p>Una aventura tropical inspirada en la película de Blue Sky Studios</p>
-        
-        <img src="rio_festival_portada.jpg" 
-             alt="Festival Río - Colegio Tlahtoani" 
-             class="hero-image"
-             data-aos="zoom-in">
-    </header>
+    <!-- PORTADA -->
+    <div class="portada" data-aos="fade">
+        <h1 class="titulo-principal">Colegio Tlahtoani<br><span>¡Festival "Río" 2024!</span></h1>
+        <div class="olas-decoracion"></div>
+    </div>
 
     <!-- Sección de Acceso -->
     <section class="section" id="access" data-aos="fade-up">
@@ -526,15 +440,20 @@
         </div>
     </section>
 
+    <!-- Botón de Inicio -->
+    <a href="https://colegiotlahtoani.com/" class="home-btn" title="Ir al inicio">
+        <i class="fas fa-home"></i>
+    </a>
+
     <!-- Botones Flotantes de Redes Sociales -->
     <div class="social-floating">
-        <a href="#" class="social-btn facebook" title="Compartir en Facebook">
+        <a href="http://facebook.com/profile.php?id=100068328885670&mibextid=LQQJ4d" class="social-btn facebook" title="Compartir en Facebook">
             <i class="fab fa-facebook-f"></i>
         </a>
-        <a href="#" class="social-btn whatsapp" title="Compartir en WhatsApp">
+        <a href="https://chatwith.io/es/s/63b7348567162" class="social-btn whatsapp" title="Compartir en WhatsApp">
             <i class="fab fa-whatsapp"></i>
         </a>
-        <a href="#" class="social-btn instagram" title="Síguenos en Instagram">
+        <a href="https://www.instagram.com/colegiotlahtoanii/" class="social-btn instagram" title="Síguenos en Instagram">
             <i class="fab fa-instagram"></i>
         </a>
     </div>
@@ -548,32 +467,6 @@
             once: true,
             duration: 800,
             easing: 'ease-out-back'
-        });
-
-        // Efecto de confeti al cargar la página
-        window.addEventListener('load', () => {
-            confetti({
-                particleCount: 150,
-                spread: 70,
-                origin: { y: 0.6 },
-                colors: ['#0096FF', '#FFC300', '#00CC66', '#A569BD']
-            });
-        });
-
-        // Opcional: Funcionalidad para botones sociales (compartir)
-        document.querySelector('.facebook').addEventListener('click', function(e) {
-            e.preventDefault();
-            window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(window.location.href));
-        });
-        
-        document.querySelector('.whatsapp').addEventListener('click', function(e) {
-            e.preventDefault();
-            window.open('https://wa.me/?text=¡Te%20invito%20al%20Festival%20Río%202024!%20' + encodeURIComponent(window.location.href));
-        });
-        
-        document.querySelector('.instagram').addEventListener('click', function(e) {
-            e.preventDefault();
-            window.open('https://instagram.com/tu_colegio'); // Reemplaza con tu usuario
         });
     </script>
 </body>
