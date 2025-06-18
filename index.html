@@ -5,10 +5,114 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Festival "Río" | Colegio Tlahtoani</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --verde-limon: #C6FF00;  /* Verde limón vibrante */
+            --verde-jungla: #2E8B57;  /* Verde selva para contraste */
+            --amarillo: #FFD700;       /* Amarillo dorado */
+            --blanco: #FFFFFF;
+            --oscuro: #1A3E1A;         /* Verde oscuro para sombras */
+        }
+        
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            overflow-x: hidden;
+            background-color: #f5f5f5;
+        }
+        
+        /* Fondo con textura de hojas */
+        .hero {
+            background: 
+                linear-gradient(to bottom, rgba(46, 139, 87, 0.85), rgba(198, 255, 0, 0.7)),
+                url('https://images.unsplash.com/photo-1498496294664-d9372eb521f3?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') center/cover;
+            padding: 5rem 1.5rem;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        
+        /* Logo con detalle tropical */
+        .logo-text {
+            font-family: 'Nunito', sans-serif;
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--blanco);
+            margin-bottom: 0.5rem;
+            letter-spacing: 1px;
+            text-shadow: 2px 2px 4px var(--oscuro);
+            position: relative;
+            display: inline-block;
+        }
+        
+        /* Título principal con énfasis en verde limón */
+        .festival-title {
+            font-family: 'Nunito', sans-serif;
+            font-size: 3.5rem;
+            font-weight: 900;
+            color: var(--blanco);
+            margin: 1rem 0;
+            line-height: 1.1;
+            text-shadow: 3px 3px 6px var(--oscuro);
+        }
+        
+        .festival-title span {
+            color: var(--verde-limon);
+            position: relative;
+            display: inline-block;
+        }
+        
+        .festival-title span::after {
+            content: '';
+            position: absolute;
+            bottom: 5px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: var(--amarillo);
+            border-radius: 3px;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .festival-title {
+                font-size: 2.5rem;
+            }
+            
+            .logo-text {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="hero" data-aos="fade-down">
+        <div class="logo-text" data-aos="fade">Colegio Tlahtoani</div>
+        <h1 class="festival-title" data-aos="fade-up" data-aos-delay="200">
+            ¡Festival <span>"Río"</span> 2024!
+        </h1>
+    </header>
+
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            once: true,
+            duration: 800,
+            easing: 'ease-out-back'
+        });
+    </script>
+</body>
+</html><!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Festival "Río" | Colegio Tlahtoani</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.css">
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
     <style>
-        /* Variables */
         :root {
             --azul-rio: #0096FF;
             --amarillo: #FFC300;
@@ -19,60 +123,187 @@
             --fondo: #F8F9FA;
             --texto: #2D3436;
         }
-
-        /* Base */
+        
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
+        
         body {
             font-family: 'Poppins', sans-serif;
             background-color: var(--fondo);
             color: var(--texto);
             line-height: 1.6;
             overflow-x: hidden;
+            font-size: 16px;
         }
-
+        
         /* Header */
         .hero {
             background: linear-gradient(135deg, var(--azul-rio), var(--verde));
             color: white;
-            text-align: center;
             padding: 2rem 1.5rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
         }
+        
         .logo {
             width: 150px;
             margin-bottom: 1rem;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
         }
+        
         h1 {
-            font-size: 2.2rem;
             font-family: 'Nunito', sans-serif;
+            font-size: 2.2rem;
+            margin-bottom: 0.5rem;
+            color: white;
             font-weight: 800;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
         }
+        
+        .hero p {
+            font-size: 1.1rem;
+            max-width: 100%;
+            margin: 0 auto 1.5rem;
+            font-weight: 500;
+        }
+        
         .hero-image {
             width: 100%;
-            max-width: 800px;
-            margin: 1rem auto;
+            max-width: 100%;
             border-radius: 12px;
+            margin: 1rem auto;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+            border: 4px solid var(--amarillo);
+            display: block;
+            transition: transform 0.3s;
         }
-
+        
+        .hero-image:hover {
+            transform: scale(1.02);
+        }
+        
         /* Secciones */
         .section {
-            background: white;
-            border-radius: 12px;
-            padding: 2rem;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            padding: 2rem 1.5rem;
             margin: 1.5rem auto;
-            max-width: 800px;
+            width: 95%;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
         }
-        .section h2 {
-            font-size: 1.8rem;
+        
+        h2 {
             font-family: 'Nunito', sans-serif;
+            font-size: 1.8rem;
             color: var(--azul-rio);
+            margin-bottom: 1.5rem;
+            text-align: center;
+            font-weight: 700;
+        }
+        
+        /* Pasos */
+        .access-steps {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        
+        .step {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            text-align: center;
+            border-left: 5px solid var(--azul-rio);
+            transition: transform 0.3s;
+        }
+        
+        .step:hover {
+            transform: translateY(-5px);
+        }
+        
+        .step-number {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--azul-rio), var(--verde));
+            color: white;
+            border-radius: 50%;
+            font-weight: bold;
+            line-height: 40px;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        
+        .step h3 {
+            color: var(--azul-rio);
+            margin-bottom: 0.5rem;
+            font-size: 1.3rem;
+        }
+        
+        .step p {
+            color: #555;
+            font-size: 1rem;
+        }
+        
+        /* Mapa interactivo */
+        .mapa-interactivo {
+            width: 100%;
+            height: 250px;
+            border-radius: 12px;
+            margin-top: 1.5rem;
+            border: 3px solid var(--azul-rio);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .mapa-interactivo iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        .mapa-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: transparent;
+            cursor: pointer;
+            z-index: 10;
+        }
+        
+        .map-btn {
+            display: inline-block;
+            margin-top: 1.5rem;
+            padding: 0.8rem 1.5rem;
+            background: linear-gradient(135deg, var(--azul-rio), var(--verde));
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 600;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+        
+        .map-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.3);
         }
 
-        /* Social Buttons */
+        /* Botones de Redes Sociales (flotantes) */
         .social-floating {
             position: fixed;
             bottom: 2rem;
@@ -80,69 +311,270 @@
             display: flex;
             flex-direction: column;
             gap: 1rem;
+            z-index: 100;
         }
+        
         .social-btn {
             width: 50px;
             height: 50px;
             border-radius: 50%;
             display: flex;
-            justify-content: center;
             align-items: center;
+            justify-content: center;
             color: white;
             font-size: 1.3rem;
             box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            transition: all 0.3s;
         }
+        
+        .social-btn:hover {
+            transform: translateY(-5px) scale(1.1);
+        }
+        
         .facebook {
             background: #1877F2;
         }
+        
         .whatsapp {
             background: #25D366;
         }
+        
         .instagram {
             background: linear-gradient(45deg, #405DE6, #E1306C, #FFDC80);
         }
-
+        
         /* Responsive */
         @media (min-width: 768px) {
+            body {
+                font-size: 17px;
+            }
+            
             .hero {
                 padding: 3rem 2rem;
             }
+            
             h1 {
                 font-size: 2.8rem;
+            }
+            
+            .hero p {
+                font-size: 1.2rem;
+            }
+            
+            .section {
+                padding: 2.5rem;
+                width: 90%;
+                max-width: 900px;
+            }
+            
+            .access-steps {
+                flex-direction: row;
+                flex-wrap: wrap;
+            }
+            
+            .step {
+                flex: 1 1 250px;
+            }
+            
+            .mapa-interactivo {
+                height: 350px;
             }
         }
     </style>
 </head>
 <body>
-    <header class="hero">
+    <header class="hero" data-aos="fade-down">
         <img src="logo_tlahtoani.png" alt="Logo Colegio Tlahtoani" class="logo">
         <h1>¡Festival "Río" 2024!</h1>
         <p>Una aventura tropical inspirada en la película de Blue Sky Studios</p>
-        <img src="rio_festival_portada.jpg" alt="Festival Río - Colegio Tlahtoani" class="hero-image">
+        
+        <img src="rio_festival_portada.jpg" 
+             alt="Festival Río - Colegio Tlahtoani" 
+             class="hero-image"
+             data-aos="zoom-in">
     </header>
 
-    <section class="section">
-        <h2>Acceso al Festival</h2>
-        <p>Sigue los pasos para obtener tus boletos:</p>
-        <!-- Steps -->
-        <div>
-            <p>1. Recibe tus boletos.</p>
-            <p>2. Guarda tus boletos y llévalos al evento.</p>
-            <p>3. Preséntalos en la entrada.</p>
+    <!-- Sección de Acceso -->
+    <section class="section" id="access" data-aos="fade-up">
+        <h2><i class="fas fa-ticket-alt"></i> Acceso al Festival</h2>
+        <div class="access-steps">
+            <div class="step" data-aos="fade-up" data-aos-delay="200">
+                <div class="step-number">1</div>
+                <h3>Recibe tus boletos</h3>
+                <p>Serán entregados en el colegio. Boletos extra: $120.</p>
+            </div>
+            <div class="step" data-aos="fade-up" data-aos-delay="400">
+                <div class="step-number">2</div>
+                <h3>Guarda tus boletos</h3>
+                <p>Consérvalos y llévalos al evento.</p>
+            </div>
+            <div class="step" data-aos="fade-up" data-aos-delay="600">
+                <div class="step-number">3</div>
+                <h3>Preséntalos en la entrada</h3>
+                <p>Muestra tus boletos válidos para ingresar.</p>
+            </div>
         </div>
     </section>
 
-    <section class="section">
-        <h2>Detalles del Evento</h2>
-        <p>Fecha: 18 de julio, 2024.</p>
-        <p>Horario: Acto académico 6to grado - 10:00 AM.</p>
+    <!-- Detalles del Evento -->
+    <section class="section" id="details" data-aos="fade-up" style="background: linear-gradient(135deg, #FFFFFF 0%, #F0F9FF 100%); border-left: 6px solid var(--azul-rio);">
+        <h2 style="color: var(--azul-rio); font-size: 2rem; margin-bottom: 2rem; position: relative; display: inline-block;">
+            <span style="background: var(--azul-rio); color: white; padding: 0.5rem 1.5rem; border-radius: 30px; box-shadow: 0 4px 12px rgba(0,150,255,0.3);">
+                <i class="fas fa-calendar-star"></i> Detalles del Evento
+            </span>
+        </h2>
+        
+        <div class="info-card" style="background: white; border-radius: 12px; padding: 2rem; box-shadow: 0 6px 18px rgba(0,0,0,0.08);">
+            <!-- Fecha -->
+            <div style="display: flex; align-items: center; margin-bottom: 1.5rem; padding-bottom: 1.5rem; border-bottom: 2px dashed #E0E0E0;">
+                <div style="background: var(--amarillo); width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 1.5rem; flex-shrink: 0;">
+                    <i class="fas fa-calendar-day" style="color: white; font-size: 1.5rem;"></i>
+                </div>
+                <div>
+                    <h3 style="color: var(--azul-rio); margin-bottom: 0.3rem; font-size: 1.3rem;">Fecha</h3>
+                    <p style="font-size: 1.2rem; font-weight: 600; color: #333;">18 de julio, 2024</p>
+                </div>
+            </div>
+            
+            <!-- Horarios -->
+            <div style="margin-bottom: 2rem;">
+                <div style="display: flex; align-items: center; margin-bottom: 1.5rem;">
+                    <div style="background: var(--verde); width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 1.5rem; flex-shrink: 0;">
+                        <i class="fas fa-clock" style="color: white; font-size: 1.5rem;"></i>
+                    </div>
+                    <div>
+                        <h3 style="color: var(--azul-rio); margin-bottom: 1rem; font-size: 1.3rem;">Horarios</h3>
+                    </div>
+                </div>
+                
+                <div style="display: grid; grid-template-columns: 1fr; gap: 1.2rem;">
+                    <!-- Acto 6to -->
+                    <div style="display: flex; align-items: center; background: rgba(0,204,102,0.1); padding: 1rem; border-radius: 10px; border-left: 4px solid var(--verde);">
+                        <div style="background: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 1rem; flex-shrink: 0; box-shadow: 0 2px 6px rgba(0,0,0,0.1);">
+                            <i class="fas fa-graduation-cap" style="color: var(--verde);"></i>
+                        </div>
+                        <div>
+                            <p style="font-weight: 600; color: #333;">Acto académico 6to grado</p>
+                            <p style="color: var(--verde); font-weight: 700; font-size: 1.1rem;">1:30 PM</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Acto Kinder -->
+                    <div style="display: flex; align-items: center; background: rgba(255,107,53,0.1); padding: 1rem; border-radius: 10px; border-left: 4px solid var(--naranja);">
+                        <div style="background: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 1rem; flex-shrink: 0; box-shadow: 0 2px 6px rgba(0,0,0,0.1);">
+                            <i class="fas fa-child" style="color: var(--naranja);"></i>
+                        </div>
+                        <div>
+                            <p style="font-weight: 600; color: #333;">Acto académico 3ro kínder</p>
+                            <p style="color: var(--naranja); font-weight: 700; font-size: 1.1rem;">2:45 PM</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Festival Kinder -->
+                    <div style="display: flex; align-items: center; background: rgba(165,105,189,0.1); padding: 1rem; border-radius: 10px; border-left: 4px solid var(--morado);">
+                        <div style="background: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 1rem; flex-shrink: 0; box-shadow: 0 2px 6px rgba(0,0,0,0.1);">
+                            <i class="fas fa-music" style="color: var(--morado);"></i>
+                        </div>
+                        <div>
+                            <p style="font-weight: 600; color: #333;">Festival kínder</p>
+                            <p style="color: var(--morado); font-weight: 700; font-size: 1.1rem;">4:30 PM</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Festival Primaria -->
+                    <div style="display: flex; align-items: center; background: rgba(0,150,255,0.1); padding: 1rem; border-radius: 10px; border-left: 4px solid var(--azul-rio);">
+                        <div style="background: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 1rem; flex-shrink: 0; box-shadow: 0 2px 6px rgba(0,0,0,0.1);">
+                            <i class="fas fa-star" style="color: var(--azul-rio);"></i>
+                        </div>
+                        <div>
+                            <p style="font-weight: 600; color: #333;">Festival primaria</p>
+                            <p style="color: var(--azul-rio); font-weight: 700; font-size: 1.1rem;">6:00 PM</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Lugar con Mapa Interactivo -->
+            <div style="margin-top: 2rem; padding-top: 1.5rem; border-top: 2px dashed #E0E0E0;">
+                <div style="display: flex; align-items: center; margin-bottom: 1.5rem;">
+                    <div style="background: var(--rojo-pasion); width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 1.5rem; flex-shrink: 0;">
+                        <i class="fas fa-map-marker-alt" style="color: white; font-size: 1.5rem;"></i>
+                    </div>
+                    <div>
+                        <h3 style="color: var(--azul-rio); margin-bottom: 0.5rem; font-size: 1.3rem;">Lugar</h3>
+                        <p style="font-size: 1.1rem; font-weight: 500; color: #333; line-height: 1.5;">
+                            Centro de Desarrollo Comunitario #25, DIF Guadalajara<br>
+                            Avenida Patria, El Sauz, Guadalajara, Jalisco, México
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Mapa interactivo que redirecciona al hacer clic -->
+                <div class="mapa-interactivo" onclick="window.open('https://maps.app.goo.gl/Q6nx3twiyeCMZEDT9', '_blank');">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3732.715061767188!2d-103.3848689242246!3d20.67378198087636!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8428ae3a95d7589d%3A0x528de490c092c4f1!2sCentro%20de%20Desarrollo%20Comunitario%20%2325%20DIF%20Guadalajara!5e0!3m2!1ses-419!2smx!4v1718331230848!5m2!1ses-419!2smx" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                    <div class="mapa-overlay"></div>
+                </div>
+                
+                <button class="map-btn" onclick="window.open('https://maps.app.goo.gl/Q6nx3twiyeCMZEDT9', '_blank');">
+                    <i class="fas fa-map-marked-alt"></i> Abrir en Google Maps
+                </button>
+            </div>
+        </div>
     </section>
 
-    <!-- Social Buttons -->
+    <!-- Botones Flotantes de Redes Sociales -->
     <div class="social-floating">
-        <a href="#" class="social-btn facebook"><i class="fab fa-facebook-f"></i></a>
-        <a href="#" class="social-btn whatsapp"><i class="fab fa-whatsapp"></i></a>
-        <a href="#" class="social-btn instagram"><i class="fab fa-instagram"></i></a>
+        <a href="#" class="social-btn facebook" title="Compartir en Facebook">
+            <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="#" class="social-btn whatsapp" title="Compartir en WhatsApp">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+        <a href="#" class="social-btn instagram" title="Síguenos en Instagram">
+            <i class="fab fa-instagram"></i>
+        </a>
     </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.js"></script>
+    <!-- Script de Confeti -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <script>
+        // Inicializar AOS (animaciones)
+        AOS.init({
+            once: true,
+            duration: 800,
+            easing: 'ease-out-back'
+        });
+
+        // Efecto de confeti al cargar la página
+        window.addEventListener('load', () => {
+            confetti({
+                particleCount: 150,
+                spread: 70,
+                origin: { y: 0.6 },
+                colors: ['#0096FF', '#FFC300', '#00CC66', '#A569BD']
+            });
+        });
+
+        // Opcional: Funcionalidad para botones sociales (compartir)
+        document.querySelector('.facebook').addEventListener('click', function(e) {
+            e.preventDefault();
+            window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(window.location.href));
+        });
+        
+        document.querySelector('.whatsapp').addEventListener('click', function(e) {
+            e.preventDefault();
+            window.open('https://wa.me/?text=¡Te%20invito%20al%20Festival%20Río%202024!%20' + encodeURIComponent(window.location.href));
+        });
+        
+        document.querySelector('.instagram').addEventListener('click', function(e) {
+            e.preventDefault();
+            window.open('https://instagram.com/tu_colegio'); // Reemplaza con tu usuario
+        });
+    </script>
 </body>
 </html>
