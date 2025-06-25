@@ -115,7 +115,7 @@
             line-height: 1.3;
         }
         
-        /* DETALLES DEL EVENTO */
+        /* EVENTOS */
         .titulo-seccion {
             display: block;
             width: 100%;
@@ -219,86 +219,44 @@
             gap: 1rem;
         }
 
-        /* BOTONES DE CONTACTO ACTUALIZADOS */
-        .contact-link {
+        /* BOTONES DE EVENTOS */
+        .evento-btn {
+            display: flex;
+            align-items: center;
             width: 100%;
-            max-width: 250px;
-            justify-content: center;
-            padding: 0.8rem;
-            font-size: 0.95rem;
-            border-radius: 30px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-            display: flex;
-            align-items: center;
-            color: white;
-        }
-
-        .contact-link i {
-            margin-right: 0.5rem;
-            font-size: 1.1rem;
-        }
-
-        .contact-link:hover {
-            transform: translateY(-3px) scale(1.03);
-        }
-
-        .contact-link.facebook {
-            background: linear-gradient(135deg, #1877F2, #0D8AF2);
-            box-shadow: 0 4px 15px rgba(24, 119, 242, 0.4);
-        }
-
-        .contact-link.facebook:hover {
-            box-shadow: 0 6px 20px rgba(24, 119, 242, 0.6);
-        }
-
-        .contact-link.whatsapp {
-            background: linear-gradient(135deg, #25D366, #00E676);
-            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
-        }
-
-        .contact-link.whatsapp:hover {
-            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.6);
-        }
-
-        .contact-link.instagram {
-            background: linear-gradient(45deg, #F58529, #DD2A7B, #8134AF);
-            box-shadow: 0 4px 15px rgba(221, 42, 123, 0.4);
-        }
-
-        .contact-link.instagram:hover {
-            box-shadow: 0 6px 20px rgba(221, 42, 123, 0.6);
-        }
-
-        .contact-link.web {
-            background: linear-gradient(135deg, #A569BD, #8E44AD);
-            box-shadow: 0 4px 15px rgba(165, 105, 189, 0.4);
-        }
-
-        .contact-link.web:hover {
-            box-shadow: 0 6px 20px rgba(165, 105, 189, 0.6);
-        }
-
-        /* CARD DE DETALLES */
-        .info-card {
-            background: white;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border: none;
             border-radius: 12px;
-            padding: 1.2rem;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            background: white;
+            text-align: left;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            position: relative;
+            overflow: hidden;
         }
-        
-        .info-item {
-            display: flex;
-            align-items: center;
-            margin-bottom: 1.2rem;
-            padding-bottom: 1.2rem;
-            border-bottom: 1px dashed #E0E0E0;
+
+        .evento-btn::after {
+            content: '\f054';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            position: absolute;
+            right: 1rem;
+            color: var(--azul-rio);
+            transition: all 0.3s;
         }
-        
-        .info-icono {
-            background: var(--amarillo);
+
+        .evento-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+        }
+
+        .evento-btn:hover::after {
+            transform: translateX(3px);
+        }
+
+        .evento-btn .icono {
             width: 40px;
             height: 40px;
             border-radius: 50%;
@@ -307,23 +265,75 @@
             justify-content: center;
             margin-right: 1rem;
             flex-shrink: 0;
+            color: white;
+            font-size: 1.1rem;
         }
-        
-        .horario-item {
-            display: flex;
-            align-items: center;
-            padding: 0.8rem;
-            border-radius: 8px;
-            margin-bottom: 0.8rem;
+
+        .evento-btn .contenido h3 {
+            color: var(--texto);
+            margin-bottom: 0.3rem;
+            font-size: 1.1rem;
         }
-        
-        .horario-icono {
-            width: 32px;
-            height: 32px;
-            margin-right: 0.8rem;
+
+        .evento-btn .contenido p.hora {
+            font-weight: 700;
+            font-size: 0.95rem;
+            margin-bottom: 0.2rem;
+        }
+
+        .evento-btn .contenido p.desc {
+            font-size: 0.85rem;
+            color: #666;
+        }
+
+        /* PÁGINAS DE EVENTOS (OCULTAS INICIALMENTE) */
+        .pagina-evento {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: white;
+            z-index: 1000;
+            padding: 2rem;
+            overflow-y: auto;
+        }
+
+        .pagina-evento .cerrar {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: var(--rojo-pasion);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
+            cursor: pointer;
+            font-size: 1.2rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+        }
+
+        .pagina-evento .contenido {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .pagina-evento h2 {
+            color: var(--azul-rio);
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .pagina-evento .imagen-evento {
+            width: 100%;
+            max-height: 300px;
+            object-fit: cover;
+            border-radius: 12px;
+            margin-bottom: 1.5rem;
         }
 
         /* Responsive */
@@ -387,6 +397,10 @@
                 padding: 0.8rem 1.5rem;
                 font-size: 1rem;
             }
+
+            .evento-btn {
+                padding: 1.2rem;
+            }
         }
     </style>
 </head>
@@ -402,109 +416,93 @@
         <div class="olas-decoracion"></div>
     </div>
 
-    <!-- DETALLES DEL EVENTO -->
-    <section class="section" id="details" data-aos="fade-up">
+    <!-- EVENTOS -->
+    <section class="section" id="events" data-aos="fade-up">
         <div class="titulo-seccion">
-            <span><i class="fas fa-calendar-star"></i> Detalles del Evento</span>
+            <span><i class="fas fa-calendar-star"></i> Eventos</span>
         </div>
         
         <div class="info-card">
-            <!-- Fecha -->
-            <div class="info-item">
-                <div class="info-icono">
+            <!-- Botón de Fecha -->
+            <button class="evento-btn" onclick="mostrarPagina('fecha')">
+                <div class="icono" style="background: var(--azul-rio);">
                     <i class="fas fa-calendar-day"></i>
                 </div>
-                <div>
-                    <h3 style="color: var(--azul-rio); margin-bottom: 0.3rem;">Fecha</h3>
-                    <p style="font-weight: 600;">18 de julio, 2024</p>
+                <div class="contenido">
+                    <h3>Fecha del Festival</h3>
+                    <p class="hora" style="color: var(--azul-rio);">18 de julio, 2024</p>
+                    <p class="desc">Haz clic para más información sobre la fecha</p>
                 </div>
+            </button>
+            
+            <!-- Botones de Eventos -->
+            <button class="evento-btn" onclick="mostrarPagina('acto-6to')">
+                <div class="icono" style="background: var(--verde);">
+                    <i class="fas fa-graduation-cap"></i>
+                </div>
+                <div class="contenido">
+                    <h3>Acto académico 6to grado</h3>
+                    <p class="hora" style="color: var(--verde);">1:30 PM</p>
+                    <p class="desc">Haz clic para detalles del evento</p>
+                </div>
+            </button>
+            
+            <button class="evento-btn" onclick="mostrarPagina('acto-kinder')">
+                <div class="icono" style="background: var(--naranja);">
+                    <i class="fas fa-child"></i>
+                </div>
+                <div class="contenido">
+                    <h3>Acto académico 3ro kínder</h3>
+                    <p class="hora" style="color: var(--naranja);">2:45 PM</p>
+                    <p class="desc">Haz clic para detalles del evento</p>
+                </div>
+            </button>
+            
+            <button class="evento-btn" onclick="mostrarPagina('festival-kinder')">
+                <div class="icono" style="background: var(--morado);">
+                    <i class="fas fa-music"></i>
+                </div>
+                <div class="contenido">
+                    <h3>Festival kínder</h3>
+                    <p class="hora" style="color: var(--morado);">4:30 PM</p>
+                    <p class="desc">Haz clic para detalles del evento</p>
+                </div>
+            </button>
+            
+            <button class="evento-btn" onclick="mostrarPagina('festival-primaria')">
+                <div class="icono" style="background: var(--azul-rio);">
+                    <i class="fas fa-star"></i>
+                </div>
+                <div class="contenido">
+                    <h3>Festival primaria</h3>
+                    <p class="hora" style="color: var(--azul-rio);">6:00 PM</p>
+                    <p class="desc">Haz clic para detalles del evento</p>
+                </div>
+            </button>
+            
+            <!-- Botón de Lugar -->
+            <button class="evento-btn" onclick="window.open('https://maps.app.goo.gl/Q6nx3twiyeCMZEDT9', '_blank')">
+                <div class="icono" style="background: var(--rojo-pasion);">
+                    <i class="fas fa-map-marker-alt"></i>
+                </div>
+                <div class="contenido">
+                    <h3>Lugar del Evento</h3>
+                    <p class="hora" style="color: var(--rojo-pasion);">Centro DIF Guadalajara</p>
+                    <p class="desc">Haz clic para ver en el mapa</p>
+                </div>
+            </button>
+            
+            <div class="mapa-interactivo" onclick="window.open('https://maps.app.goo.gl/Q6nx3twiyeCMZEDT9', '_blank');">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3732.715061767188!2d-103.3848689242246!3d20.67378198087636!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8428ae3a95d7589d%3A0x528de490c092c4f1!2sCentro%20de%20Desarrollo%20Comunitario%20%2325%20DIF%20Guadalajara!5e0!3m2!1ses-419!2smx!4v1718331230848!5m2!1ses-419!2smx" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
             </div>
             
-            <!-- Horarios -->
-            <div style="margin-bottom: 1.5rem;">
-                <div class="info-item" style="border-bottom: none; padding-bottom: 0;">
-                    <div class="info-icono" style="background: var(--verde);">
-                        <i class="fas fa-clock"></i>
-                    </div>
-                    <div>
-                        <h3 style="color: var(--azul-rio);">Horarios</h3>
-                    </div>
-                </div>
-                
-                <div>
-                    <!-- Acto 6to -->
-                    <div class="horario-item" style="background: rgba(0,204,102,0.1); border-left: 4px solid var(--verde);">
-                        <div class="horario-icono">
-                            <i class="fas fa-graduation-cap" style="color: var(--verde);"></i>
-                        </div>
-                        <div>
-                            <p style="font-weight: 600;">Acto académico 6to grado</p>
-                            <p style="color: var(--verde); font-weight: 700;">1:30 PM</p>
-                        </div>
-                    </div>
-                    
-                    <!-- Acto Kinder -->
-                    <div class="horario-item" style="background: rgba(255,107,53,0.1); border-left: 4px solid var(--naranja);">
-                        <div class="horario-icono">
-                            <i class="fas fa-child" style="color: var(--naranja);"></i>
-                        </div>
-                        <div>
-                            <p style="font-weight: 600;">Acto académico 3ro kínder</p>
-                            <p style="color: var(--naranja); font-weight: 700;">2:45 PM</p>
-                        </div>
-                    </div>
-                    
-                    <!-- Festival Kinder -->
-                    <div class="horario-item" style="background: rgba(165,105,189,0.1); border-left: 4px solid var(--morado);">
-                        <div class="horario-icono">
-                            <i class="fas fa-music" style="color: var(--morado);"></i>
-                        </div>
-                        <div>
-                            <p style="font-weight: 600;">Festival kínder</p>
-                            <p style="color: var(--morado); font-weight: 700;">4:30 PM</p>
-                        </div>
-                    </div>
-                    
-                    <!-- Festival Primaria -->
-                    <div class="horario-item" style="background: rgba(0,150,255,0.1); border-left: 4px solid var(--azul-rio);">
-                        <div class="horario-icono">
-                            <i class="fas fa-star" style="color: var(--azul-rio);"></i>
-                        </div>
-                        <div>
-                            <p style="font-weight: 600;">Festival primaria</p>
-                            <p style="color: var(--azul-rio); font-weight: 700;">6:00 PM</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Lugar -->
-            <div>
-                <div class="info-item" style="border-bottom: none; padding-bottom: 0;">
-                    <div class="info-icono" style="background: var(--rojo-pasion);">
-                        <i class="fas fa-map-marker-alt"></i>
-                    </div>
-                    <div>
-                        <h3 style="color: var(--azul-rio);">Lugar</h3>
-                        <p style="font-weight: 500;">
-                            Centro de Desarrollo Comunitario #25, DIF Guadalajara<br>
-                            Avenida Patria, El Sauz, Guadalajara
-                        </p>
-                    </div>
-                </div>
-                
-                <div class="mapa-interactivo" onclick="window.open('https://maps.app.goo.gl/Q6nx3twiyeCMZEDT9', '_blank');">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3732.715061767188!2d-103.3848689242246!3d20.67378198087636!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8428ae3a95d7589d%3A0x528de490c092c4f1!2sCentro%20de%20Desarrollo%20Comunitario%20%2325%20DIF%20Guadalajara!5e0!3m2!1ses-419!2smx!4v1718331230848!5m2!1ses-419!2smx" 
-                            allowfullscreen="" 
-                            loading="lazy" 
-                            referrerpolicy="no-referrer-when-downgrade">
-                    </iframe>
-                </div>
-                
-                <button class="map-btn">
-                    <i class="fas fa-map-marked-alt"></i> Abrir en Google Maps
-                </button>
-            </div>
+            <button class="map-btn">
+                <i class="fas fa-map-marked-alt"></i> Abrir en Google Maps
+            </button>
         </div>
     </section>
 
@@ -549,6 +547,114 @@
         </div>
     </section>
 
+    <!-- PÁGINAS DE EVENTOS -->
+    <!-- Página: Fecha del Festival -->
+    <div id="pagina-fecha" class="pagina-evento">
+        <div class="cerrar" onclick="ocultarPaginas()">×</div>
+        <div class="contenido">
+            <h2>Fecha del Festival "Río" 2024</h2>
+            <img src="rio.jpg" alt="Fecha Festival" class="imagen-evento">
+            <p>El <strong>Festival "Río" 2024</strong> se llevará a cabo el día:</p>
+            <h3 style="color: var(--azul-rio); text-align: center; margin: 1.5rem 0; font-size: 1.8rem;">18 de julio, 2024</h3>
+            <p>Este día especial contará con cuatro eventos principales:</p>
+            <ul style="margin: 1rem 0 1rem 2rem;">
+                <li>Acto académico 6to grado - 1:30 PM</li>
+                <li>Acto académico 3ro kínder - 2:45 PM</li>
+                <li>Festival kínder - 4:30 PM</li>
+                <li>Festival primaria - 6:00 PM</li>
+            </ul>
+            <p>¡Esperamos contar con tu presencia en este magno evento donde nuestros alumnos demostrarán todo su talento!</p>
+        </div>
+    </div>
+
+    <!-- Página: Acto 6to Grado -->
+    <div id="pagina-acto-6to" class="pagina-evento">
+        <div class="cerrar" onclick="ocultarPaginas()">×</div>
+        <div class="contenido">
+            <h2>Acto Académico - 6to Grado</h2>
+            <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Acto 6to grado" class="imagen-evento">
+            <h3 style="color: var(--verde); text-align: center; margin: 1rem 0;">1:30 PM</h3>
+            <p>El <strong>acto académico de 6to grado</strong> marca un momento muy especial en la vida de nuestros alumnos, donde celebramos su paso a la secundaria.</p>
+            <p><strong>Detalles importantes:</strong></p>
+            <ul style="margin: 1rem 0 1rem 2rem;">
+                <li>Los alumnos deben presentarse a las 12:30 PM</li>
+                <li>Vestimenta formal (uniforme de gala)</li>
+                <li>Cada alumno puede invitar hasta 4 personas</li>
+                <li>Duración aproximada: 1 hora</li>
+            </ul>
+            <p>Este evento incluye la entrega de certificados, reconocimientos especiales y un emotivo discurso de despedida.</p>
+        </div>
+    </div>
+
+    <!-- Página: Acto Kinder -->
+    <div id="pagina-acto-kinder" class="pagina-evento">
+        <div class="cerrar" onclick="ocultarPaginas()">×</div>
+        <div class="contenido">
+            <h2>Acto Académico - 3ro Kínder</h2>
+            <img src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Acto kínder" class="imagen-evento">
+            <h3 style="color: var(--naranja); text-align: center; margin: 1rem 0;">2:45 PM</h3>
+            <p>Celebramos la graduación de nuestros pequeños de <strong>3ro de kínder</strong> en este emotivo acto académico.</p>
+            <p><strong>Información para padres:</strong></p>
+            <ul style="margin: 1rem 0 1rem 2rem;">
+                <li>Los niños deben llegar a las 2:15 PM</li>
+                <li>Vestimenta: uniforme escolar</li>
+                <li>Cada niño puede ser acompañado por 2 adultos</li>
+                <li>Duración aproximada: 45 minutos</li>
+            </ul>
+            <p>El evento incluye la entrega de diplomas, una pequeña presentación de los niños y fotos oficiales.</p>
+        </div>
+    </div>
+
+    <!-- Página: Festival Kinder -->
+    <div id="pagina-festival-kinder" class="pagina-evento">
+        <div class="cerrar" onclick="ocultarPaginas()">×</div>
+        <div class="contenido">
+            <h2>Festival de Kínder</h2>
+            <img src="https://images.unsplash.com/photo-1541178735493-479c1a27ed24?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Festival kínder" class="imagen-evento">
+            <h3 style="color: var(--morado); text-align: center; margin: 1rem 0;">4:30 PM</h3>
+            <p>Nuestros pequeños artistas de <strong>kínder</strong> presentarán un espectáculo lleno de color, música y baile.</p>
+            <p><strong>Presentaciones:</strong></p>
+            <ul style="margin: 1rem 0 1rem 2rem;">
+                <li>Bailes tradicionales mexicanos</li>
+                <li>Coreografías musicales</li>
+                <li>Obra teatral "El Río Mágico"</li>
+                <li>Acto de clausura con todos los niños</li>
+            </ul>
+            <p><strong>Recomendaciones:</strong></p>
+            <ul style="margin: 1rem 0 1rem 2rem;">
+                <li>Llegar 15 minutos antes</li>
+                <li>Los niños deben estar en el backstage a las 4:00 PM</li>
+                <li>Traer disfraces adicionales en bolsa marcada</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Página: Festival Primaria -->
+    <div id="pagina-festival-primaria" class="pagina-evento">
+        <div class="cerrar" onclick="ocultarPaginas()">×</div>
+        <div class="contenido">
+            <h2>Festival de Primaria</h2>
+            <img src="https://images.unsplash.com/photo-1547036967-23d11aacaee0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Festival primaria" class="imagen-evento">
+            <h3 style="color: var(--azul-rio); text-align: center; margin: 1rem 0;">6:00 PM</h3>
+            <p>El gran <strong>Festival "Río"</strong> presentado por los alumnos de primaria, con un espectáculo lleno de talento.</p>
+            <p><strong>Programa:</strong></p>
+            <ul style="margin: 1rem 0 1rem 2rem;">
+                <li>1ro y 2do: Danza folklórica</li>
+                <li>3ro y 4to: Obra teatral "Guardianes del Río"</li>
+                <li>5to y 6to: Flashmob musical</li>
+                <li>Acto final: Todos los grados</li>
+            </ul>
+            <p><strong>Información importante:</strong></p>
+            <ul style="margin: 1rem 0 1rem 2rem;">
+                <li>Alumnos deben presentarse a las 5:00 PM</li>
+                <li>Vestuario: Según indicaciones del profesor</li>
+                <li>Entrada con boleto (capacidad limitada)</li>
+                <li>Duración aproximada: 2 horas</li>
+            </ul>
+            <p>¡No se pierdan este magno evento donde celebramos el talento de nuestros estudiantes!</p>
+        </div>
+    </div>
+
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
     <script>
@@ -571,6 +677,27 @@
         document.querySelector('.map-btn').addEventListener('click', function() {
             window.open('https://maps.app.goo.gl/Q6nx3twiyeCMZEDT9', '_blank');
         });
+
+        // Mostrar página de evento
+        function mostrarPagina(id) {
+            // Ocultar todas las páginas primero
+            document.querySelectorAll('.pagina-evento').forEach(pagina => {
+                pagina.style.display = 'none';
+            });
+            
+            // Mostrar la página solicitada
+            document.getElementById(`pagina-${id}`).style.display = 'block';
+            
+            // Desplazarse al inicio
+            window.scrollTo(0, 0);
+        }
+
+        // Ocultar todas las páginas de evento
+        function ocultarPaginas() {
+            document.querySelectorAll('.pagina-evento').forEach(pagina => {
+                pagina.style.display = 'none';
+            });
+        }
     </script>
 </body>
 </html>
