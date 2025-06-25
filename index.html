@@ -178,7 +178,7 @@
         /* Mapa interactivo */
         .mapa-interactivo {
             width: 100%;
-            height: 200px;
+            height: 300px;
             border-radius: 10px;
             margin-top: 1.2rem;
             border: 3px solid var(--azul-rio);
@@ -186,26 +186,34 @@
             overflow: hidden;
         }
         
+        .mapa-interactivo iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
         /* BOTÓN DE MAPA ACTUALIZADO */
         .map-btn {
             display: inline-block;
-            margin-top: 1.2rem;
-            padding: 0.7rem 1.2rem;
-            font-size: 0.9rem;
-            background: linear-gradient(135deg, #FF6B35, #FF4757);
+            margin: 1.5rem auto 0;
+            padding: 0.8rem 1.5rem;
+            font-size: 1rem;
+            background: linear-gradient(135deg, var(--azul-rio), var(--verde));
             color: white;
             text-decoration: none;
             border-radius: 30px;
             font-weight: 600;
-            box-shadow: 0 4px 15px rgba(255,107,53,0.4);
+            box-shadow: 0 4px 15px rgba(0,150,255,0.4);
             transition: all 0.3s;
             border: none;
             cursor: pointer;
+            text-align: center;
+            width: auto;
         }
 
         .map-btn:hover {
             transform: translateY(-3px) scale(1.03);
-            box-shadow: 0 6px 20px rgba(255,107,53,0.6);
+            box-shadow: 0 6px 20px rgba(0,150,255,0.6);
         }
 
         /* Sección de Contacto */
@@ -214,9 +222,51 @@
         }
 
         .contact-links {
+            display: flex;
             flex-direction: column;
             align-items: center;
             gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .contact-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            padding: 0.8rem;
+            border-radius: 8px;
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .contact-link i {
+            margin-right: 0.5rem;
+            font-size: 1.2rem;
+        }
+
+        .contact-link.facebook {
+            background-color: #1877F2;
+        }
+
+        .contact-link.whatsapp {
+            background-color: #25D366;
+        }
+
+        .contact-link.instagram {
+            background: linear-gradient(45deg, #405DE6, #5851DB, #833AB4, #C13584, #E1306C, #FD1D1D);
+        }
+
+        .contact-link.web {
+            background-color: var(--azul-rio);
+        }
+
+        .contact-link:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
         }
 
         /* BOTONES DE EVENTOS */
@@ -385,7 +435,7 @@
             }
             
             .mapa-interactivo {
-                height: 300px;
+                height: 400px;
             }
 
             .contact-links {
@@ -396,7 +446,7 @@
 
             .contact-link {
                 width: auto;
-                max-width: none;
+                min-width: 200px;
                 padding: 0.8rem 1.5rem;
             }
 
@@ -418,10 +468,10 @@
 <body>
     <!-- PORTADA -->
     <div class="portada" data-aos="fade">
-        <h1 class="titulo-principal">Colegio Tlahtoani<br><span>¡Festival "Río" 2024!</span></h1>
+        <h1 class="titulo-principal">Colegio Tlahtoani<br><span>¡Festival "Río" 2025!</span></h1>
         
         <div class="imagen-festival">
-            <img src="rio.jpg" alt="Festival Río 2024">
+            <img src="rio.jpg" alt="Festival Río 2025">
         </div>
         
         <div class="olas-decoracion"></div>
@@ -491,7 +541,7 @@
                 </div>
             </button>
             
-            <div class="mapa-interactivo" onclick="window.open('https://maps.app.goo.gl/Q6nx3twiyeCMZEDT9', '_blank');">
+            <div class="mapa-interactivo">
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3732.715061767188!2d-103.3848689242246!3d20.67378198087636!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8428ae3a95d7589d%3A0x528de490c092c4f1!2sCentro%20de%20Desarrollo%20Comunitario%20%2325%20DIF%20Guadalajara!5e0!3m2!1ses-419!2smx!4v1718331230848!5m2!1ses-419!2smx" 
                         allowfullscreen="" 
                         loading="lazy" 
@@ -499,7 +549,7 @@
                 </iframe>
             </div>
             
-            <button class="map-btn">
+            <button class="map-btn" onclick="window.open('https://maps.app.goo.gl/Q6nx3twiyeCMZEDT9', '_blank')">
                 <i class="fas fa-map-marked-alt"></i> Abrir en Google Maps
             </button>
         </div>
@@ -623,11 +673,6 @@
                 origin: { y: 0.6 },
                 colors: ['#FF6B35', '#FF4757', '#25D366', '#1877F2', '#A569BD']
             });
-        });
-
-        // Evento para el botón del mapa
-        document.querySelector('.map-btn').addEventListener('click', function() {
-            window.open('https://maps.app.goo.gl/Q6nx3twiyeCMZEDT9', '_blank');
         });
 
         // Mostrar página de evento
