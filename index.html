@@ -336,6 +336,17 @@
             margin-bottom: 1.5rem;
         }
 
+        .pagina-evento .destacado {
+            background: rgba(0,150,255,0.1);
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin: 1.5rem 0;
+            border-left: 4px solid var(--azul-rio);
+            font-style: italic;
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
         /* Responsive */
         @media (min-width: 768px) {
             body {
@@ -423,25 +434,13 @@
         </div>
         
         <div class="info-card">
-            <!-- Botón de Fecha -->
-            <button class="evento-btn" onclick="mostrarPagina('fecha')">
-                <div class="icono" style="background: var(--azul-rio);">
-                    <i class="fas fa-calendar-day"></i>
-                </div>
-                <div class="contenido">
-                    <h3>Fecha del Festival</h3>
-                    <p class="hora" style="color: var(--azul-rio);">18 de julio, 2024</p>
-                    <p class="desc">Haz clic para más información sobre la fecha</p>
-                </div>
-            </button>
-            
             <!-- Botones de Eventos -->
             <button class="evento-btn" onclick="mostrarPagina('acto-6to')">
                 <div class="icono" style="background: var(--verde);">
                     <i class="fas fa-graduation-cap"></i>
                 </div>
                 <div class="contenido">
-                    <h3>Acto académico 6to grado</h3>
+                    <h3>Acto Académico de 6to Grado</h3>
                     <p class="hora" style="color: var(--verde);">1:30 PM</p>
                     <p class="desc">Haz clic para detalles del evento</p>
                 </div>
@@ -452,7 +451,7 @@
                     <i class="fas fa-child"></i>
                 </div>
                 <div class="contenido">
-                    <h3>Acto académico 3ro kínder</h3>
+                    <h3>Acto Académico de 3ro Kínder</h3>
                     <p class="hora" style="color: var(--naranja);">2:45 PM</p>
                     <p class="desc">Haz clic para detalles del evento</p>
                 </div>
@@ -463,7 +462,7 @@
                     <i class="fas fa-music"></i>
                 </div>
                 <div class="contenido">
-                    <h3>Festival kínder</h3>
+                    <h3>Festival de Kínder</h3>
                     <p class="hora" style="color: var(--morado);">4:30 PM</p>
                     <p class="desc">Haz clic para detalles del evento</p>
                 </div>
@@ -474,7 +473,7 @@
                     <i class="fas fa-star"></i>
                 </div>
                 <div class="contenido">
-                    <h3>Festival primaria</h3>
+                    <h3>Festival de Primaria</h3>
                     <p class="hora" style="color: var(--azul-rio);">6:00 PM</p>
                     <p class="desc">Haz clic para detalles del evento</p>
                 </div>
@@ -548,41 +547,18 @@
     </section>
 
     <!-- PÁGINAS DE EVENTOS -->
-    <!-- Página: Fecha del Festival -->
-    <div id="pagina-fecha" class="pagina-evento">
-        <div class="cerrar" onclick="ocultarPaginas()">×</div>
-        <div class="contenido">
-            <h2>Fecha del Festival "Río" 2024</h2>
-            <img src="rio.jpg" alt="Fecha Festival" class="imagen-evento">
-            <p>El <strong>Festival "Río" 2024</strong> se llevará a cabo el día:</p>
-            <h3 style="color: var(--azul-rio); text-align: center; margin: 1.5rem 0; font-size: 1.8rem;">18 de julio, 2024</h3>
-            <p>Este día especial contará con cuatro eventos principales:</p>
-            <ul style="margin: 1rem 0 1rem 2rem;">
-                <li>Acto académico 6to grado - 1:30 PM</li>
-                <li>Acto académico 3ro kínder - 2:45 PM</li>
-                <li>Festival kínder - 4:30 PM</li>
-                <li>Festival primaria - 6:00 PM</li>
-            </ul>
-            <p>¡Esperamos contar con tu presencia en este magno evento donde nuestros alumnos demostrarán todo su talento!</p>
-        </div>
-    </div>
-
     <!-- Página: Acto 6to Grado -->
     <div id="pagina-acto-6to" class="pagina-evento">
         <div class="cerrar" onclick="ocultarPaginas()">×</div>
         <div class="contenido">
-            <h2>Acto Académico - 6to Grado</h2>
-            <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Acto 6to grado" class="imagen-evento">
+            <h2>Acto Académico de 6to Grado</h2>
+            <img src="6to.jpg" alt="Acto 6to grado" class="imagen-evento">
             <h3 style="color: var(--verde); text-align: center; margin: 1rem 0;">1:30 PM</h3>
-            <p>El <strong>acto académico de 6to grado</strong> marca un momento muy especial en la vida de nuestros alumnos, donde celebramos su paso a la secundaria.</p>
-            <p><strong>Detalles importantes:</strong></p>
-            <ul style="margin: 1rem 0 1rem 2rem;">
-                <li>Los alumnos deben presentarse a las 12:30 PM</li>
-                <li>Vestimenta formal (uniforme de gala)</li>
-                <li>Cada alumno puede invitar hasta 4 personas</li>
-                <li>Duración aproximada: 1 hora</li>
-            </ul>
-            <p>Este evento incluye la entrega de certificados, reconocimientos especiales y un emotivo discurso de despedida.</p>
+            
+            <div class="destacado">
+                🌟 Acto Académico de 6to Grado – 1:30 pm<br><br>
+                Un momento lleno de orgullo y emoción, donde celebramos el esfuerzo y los logros de nuestros estudiantes de sexto grado. ¡Una etapa que culmina con alegría y la promesa de nuevos caminos por explorar!
+            </div>
         </div>
     </div>
 
@@ -590,18 +566,14 @@
     <div id="pagina-acto-kinder" class="pagina-evento">
         <div class="cerrar" onclick="ocultarPaginas()">×</div>
         <div class="contenido">
-            <h2>Acto Académico - 3ro Kínder</h2>
-            <img src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Acto kínder" class="imagen-evento">
+            <h2>Acto Académico de 3ro Kínder</h2>
+            <img src="3ro.jpg" alt="Acto kínder" class="imagen-evento">
             <h3 style="color: var(--naranja); text-align: center; margin: 1rem 0;">2:45 PM</h3>
-            <p>Celebramos la graduación de nuestros pequeños de <strong>3ro de kínder</strong> en este emotivo acto académico.</p>
-            <p><strong>Información para padres:</strong></p>
-            <ul style="margin: 1rem 0 1rem 2rem;">
-                <li>Los niños deben llegar a las 2:15 PM</li>
-                <li>Vestimenta: uniforme escolar</li>
-                <li>Cada niño puede ser acompañado por 2 adultos</li>
-                <li>Duración aproximada: 45 minutos</li>
-            </ul>
-            <p>El evento incluye la entrega de diplomas, una pequeña presentación de los niños y fotos oficiales.</p>
+            
+            <div class="destacado">
+                🎓 Acto Académico de 3ro de Kínder – 2:45 pm<br><br>
+                Una celebración conmovedora donde los más pequeños demuestran cómo han crecido y aprendido. Verlos con sus togas es recordar la magia de sus primeros pasos en la escuela.
+            </div>
         </div>
     </div>
 
@@ -610,22 +582,13 @@
         <div class="cerrar" onclick="ocultarPaginas()">×</div>
         <div class="contenido">
             <h2>Festival de Kínder</h2>
-            <img src="https://images.unsplash.com/photo-1541178735493-479c1a27ed24?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Festival kínder" class="imagen-evento">
+            <img src="festival.jpg" alt="Festival kínder" class="imagen-evento">
             <h3 style="color: var(--morado); text-align: center; margin: 1rem 0;">4:30 PM</h3>
-            <p>Nuestros pequeños artistas de <strong>kínder</strong> presentarán un espectáculo lleno de color, música y baile.</p>
-            <p><strong>Presentaciones:</strong></p>
-            <ul style="margin: 1rem 0 1rem 2rem;">
-                <li>Bailes tradicionales mexicanos</li>
-                <li>Coreografías musicales</li>
-                <li>Obra teatral "El Río Mágico"</li>
-                <li>Acto de clausura con todos los niños</li>
-            </ul>
-            <p><strong>Recomendaciones:</strong></p>
-            <ul style="margin: 1rem 0 1rem 2rem;">
-                <li>Llegar 15 minutos antes</li>
-                <li>Los niños deben estar en el backstage a las 4:00 PM</li>
-                <li>Traer disfraces adicionales en bolsa marcada</li>
-            </ul>
+            
+            <div class="destacado">
+                🎤 Festival de Kínder – 4:30 pm<br><br>
+                ¡El escenario se llena de energía y color! Los niños de kínder compartirán su talento con bailes, canciones y actuaciones que reflejan su creatividad y entusiasmo.
+            </div>
         </div>
     </div>
 
@@ -634,24 +597,13 @@
         <div class="cerrar" onclick="ocultarPaginas()">×</div>
         <div class="contenido">
             <h2>Festival de Primaria</h2>
-            <img src="https://images.unsplash.com/photo-1547036967-23d11aacaee0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Festival primaria" class="imagen-evento">
+            <img src="festival.jpg" alt="Festival primaria" class="imagen-evento">
             <h3 style="color: var(--azul-rio); text-align: center; margin: 1rem 0;">6:00 PM</h3>
-            <p>El gran <strong>Festival "Río"</strong> presentado por los alumnos de primaria, con un espectáculo lleno de talento.</p>
-            <p><strong>Programa:</strong></p>
-            <ul style="margin: 1rem 0 1rem 2rem;">
-                <li>1ro y 2do: Danza folklórica</li>
-                <li>3ro y 4to: Obra teatral "Guardianes del Río"</li>
-                <li>5to y 6to: Flashmob musical</li>
-                <li>Acto final: Todos los grados</li>
-            </ul>
-            <p><strong>Información importante:</strong></p>
-            <ul style="margin: 1rem 0 1rem 2rem;">
-                <li>Alumnos deben presentarse a las 5:00 PM</li>
-                <li>Vestuario: Según indicaciones del profesor</li>
-                <li>Entrada con boleto (capacidad limitada)</li>
-                <li>Duración aproximada: 2 horas</li>
-            </ul>
-            <p>¡No se pierdan este magno evento donde celebramos el talento de nuestros estudiantes!</p>
+            
+            <div class="destacado">
+                🎭 Festival de Primaria – 6:00 pm<br><br>
+                Un espectáculo vibrante donde los estudiantes de primaria brillan con sus presentaciones. Música, danza y diversión para celebrar el trabajo de todo el año.
+            </div>
         </div>
     </div>
 
